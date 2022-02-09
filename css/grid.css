@@ -1,1 +1,59 @@
-/* No CSS */
+body * {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 320px) {
+  .container {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 576px) {
+  .container {
+    width: 550px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 730px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    width: 940px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    width: 1330px;
+  }
+}
+
+.row,
+[class^=col-],
+[class*=" col-"],
+.col {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.row.nowrap,
+[class^=col-].nowrap,
+[class*=" col-"].nowrap,
+.col.nowrap {
+  flex-wrap: nowrap;
+}
+
+/*# sourceMappingURL=grid.css.map */
