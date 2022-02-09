@@ -1,0 +1,43 @@
+@use 'sass:math';
+
+// Sizes map. Used for breakpoints and classnames.
+$sizes: (
+    'xs': 320px,
+    's': 576px,
+    'm': 768px,
+    'l': 992px,
+    'xl': 1200px,
+    'xxl': 1400px
+);
+
+body * {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    @each $size, $screenwidth in $sizes {
+        @media screen and (min-width: $screenwidth) {
+            $div: math.round( math.div( ($screenwidth * .95), 10) );
+            width: $div * 10;
+        }
+    }
+}
+
+.row,
+[class^='col-'],
+[class*=' col-'],
+.col {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    &.nowrap {
+        flex-wrap: nowrap;
+    }
+}
