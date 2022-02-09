@@ -19,8 +19,8 @@ body * {
     @each $size,
     $screenwidth in $sizes {
         @media screen and (min-width: $screenwidth) {
-            $div: math.round(math.div(($screenwidth * .95), 10));
-            width: $div * 10;
+            $div ($size.colnum(), $i);
+            $width: calc(100% / $div);
         }
     }
 }
